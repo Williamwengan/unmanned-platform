@@ -5,7 +5,7 @@ import sys
 import os
 
 # 配置 Ollama 服务的地址和端口
-OLLAMA_URL = "http://localhost:40997/api/chat"
+OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL_NAME = "qwen3-vl:8b"
 
 
@@ -49,11 +49,11 @@ def analyze_scene(image_path):
         response.raise_for_status()  # 检查 HTTP 请求是否成功
 
         result = response.json()
-        print(result.get("response", "模型没有返回任何内容"))
+        print(result.get("response"))
 
     except requests.exceptions.RequestException as e:
         print(f"请求 Ollama 服务失败: {e}")
-        print("请检查 Ollama 是否已启动，以及端口 45295 是否正确。")
+        print("请检查 Ollama 是否已启动，以及端口是否正确。")
 
 
 if __name__ == "__main__":
