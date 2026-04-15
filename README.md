@@ -5,8 +5,9 @@ https://github.com/ollama/ollama/releases
 tar --use-compress-program=unzstd -xvf filename.tar.zst -C /path/to/destination/
 
 cd bin
+export PATH=$PATH:/data1/wenganye/project/qwen/bin
 
-ollama serve
+./ollama serve
 
 新开窗口 
-ollama run qwen3-vl:8b
+./ollama run qwen3-vl:8b
